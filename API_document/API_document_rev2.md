@@ -7,10 +7,10 @@
 
 #### パラメータ  
 
-| 名 前 |	型	| 必 須 |
+| 名 前 |	型 | 必 須 |
 |:----:|:---:|:---:|
-|Username|	String|	True|
-|Password|	String|	True|
+|Username|String|True|
+|Password|String|True|
 
 #### HTTP戻り値 : JSON
 
@@ -93,9 +93,10 @@ String responseJson = loginApi("admin","admin");
 #### HTTP種類 : DELETE
 #### URL : (BASE URL)**/SpringRest/customer/delete**
 #### HTTP戻り値 : JSON
-#### パラメータ
-| 名 前 |	型| 必 須 |  
-|:----:|:---:|:---:|  
+#### パラメータ  
+
+| 名 前 |	型 | 必 須 |  
+|:----:|:----|:----:|  
 |access_token|String|True|
 |customerId|Integer[] (複数の場合はカンマで区切る)|True|  
 
