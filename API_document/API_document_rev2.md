@@ -94,10 +94,10 @@ String responseJson = loginApi("admin","admin");
 #### URL : (BASE URL)**/SpringRest/customer/delete**
 #### HTTP戻り値 : JSON
 #### パラメータ
-| 名 前 |	型	| 必 須 |  
+| 名 前 |	型| 必 須 |  
 |:----:|:---:|:---:|  
-|access_token|	String|	True|
-|customerId|	Integer[] (複数の場合はカンマで区切る)|	True|  
+|access_token|String|True|
+|customerId|Integer[] (複数の場合はカンマで区切る)|True|  
 
 #### JSON戻り値 例：
 
