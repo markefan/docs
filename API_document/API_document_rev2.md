@@ -52,33 +52,33 @@ This method used for login, you have to pass username and password as the parame
 
 ```java
 private String loginApi(String username, String password) {
-		try {
-			HttpClient client = new DefaultHttpClient();
-			HttpPost httpPost = new HttpPost("<API_BASE_URL>/SpringRest/account/user/login");
-			List<NameValuePair> Parameter = new ArrayList<NameValuePair>();
-			Parameter.add(new BasicNameValuePair("username", username));
-			Parameter.add(new BasicNameValuePair("password", password));
-			HttpEntity entity = new UrlEncodedFormEntity(Parameter);
-			httpPost.setEntity(entity);
-			HTTPResponse response = client.execute(httpPost);
-			BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-			String line = "";
-			while ((line = rd.readLine()) != null) {
+	try {
+		HttpClient client = new DefaultHttpClient();
+		HttpPost httpPost = new HttpPost("<API_BASE_URL>/SpringRest/account/user/login");
+		List<NameValuePair> Parameter = new ArrayList<NameValuePair>();
+		Parameter.add(new BasicNameValuePair("username", username));
+		Parameter.add(new BasicNameValuePair("password", password));
+		HttpEntity entity = new UrlEncodedFormEntity(Parameter);
+		httpPost.setEntity(entity);
+		HTTPResponse response = client.execute(httpPost);
+		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+		String line = "";
+		while ((line = rd.readLine()) != null) {
 				
-				return  line;
-			}
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClientProtocolException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		return  line;
 		}
-		return null;
+	} catch (UnsupportedEncodingException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (ClientProtocolException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
+	return null;
+}
 ```
 
 #### 呼び出し方法
@@ -88,16 +88,19 @@ String responseJson = loginApi("admin","admin");
 ```
   
 ---
-## リードの削除
+## リードの削除  
 
-#### HTTP種類 : DELETE
-#### URL : (BASE URL)**/SpringRest/customer/delete**
-#### HTTP戻り値 : JSON
+#### HTTP種類 : DELETE  
+
+#### URL : (BASE URL)**/SpringRest/customer/delete**  
+
+#### HTTP戻り値 : JSON  
+
 #### パラメータ  
 
 | 名 前 |	型 | 必 須 |  
 |:----:|:----|:----:|  
-|access_token|String|True|
+|access_token|String|True|  
 |customerId|Integer[] (複数の場合はカンマで区切る)|True|  
 
 #### JSON戻り値 例：
